@@ -1,3 +1,9 @@
+# Secrets 
+Client ID e74be6c70b214c6a89ffc0bb76ddd005
+Client Secret aa089c7e7b7c4952a4001603966102ff
+
+scr/lib/Keys.js
+
 # Logs
 logs
 *.log
