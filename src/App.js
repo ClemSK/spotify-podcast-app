@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import NavBar from './common/NavBar'
 import Home from './common/Home'
 import Login from './auth/Login'
+import PodcastIndex from './components/PodcastIndex'
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
+        <Route path="/login" component={Login} />
+        <Route path="/podcast" component={PodcastIndex} />
       </Switch>
     </BrowserRouter>
   )
