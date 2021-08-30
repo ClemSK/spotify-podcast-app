@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getAccessToken } from './Auth'
+import { bearerToken } from './SpotifyAuth'
 // import { getToken } from './auth'
 
 // should we use this?
@@ -14,11 +14,13 @@ const showsUrl = 'https://api.spotify.com/v1/me/shows'
 export const getAllUserShows = () => {
   // accessing the users data with token
   const requestUserData = {
-    headers: { Authorization: `Bearer ${getAccessToken()}` },
+    headers: { Authorization: `Bearer ${bearerToken()}` },
   }
   // getting the show url
   return axios.get(`${showsUrl}`, requestUserData)
 }
+
+console.log(getAllUserShows)
 
 // Secondary
 // List episodes for a show:

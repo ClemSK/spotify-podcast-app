@@ -1,5 +1,5 @@
 import React from 'react'
-import { loginUrl } from '../lib/Auth'
+import { loginUrl } from '../lib/SpotifyAuth'
 
 const Login = () => {
   return (
