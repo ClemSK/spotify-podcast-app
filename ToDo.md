@@ -2,19 +2,28 @@ Getting the MVP done:
 
 next steps:
 
-1 - Login - done
+1 - Login
 
-- get the authorisation to work
+- get the authorisation to work:
+  to resolve - error 400 message: "Only valid bearer authentication supported" linked to the code in PodcastIndex line 14
+  error 401 message: "Invalid access token"
 
-  - James - work on authorisation to get working
+  - for a reference use the curl and bearer token generated in spotify web console
+  - Implicit grant flow: https://developer.spotify.com/documentation/general/guides/authorization-guide/#implicit-grant-flow
+  - Playback sdk: https://developer.spotify.com/documentation/web-playback-sdk/quick-start/
 
+  - pass token to local storage
+
+    - setToken - find out what the difference is between set and get token
+    - getToken
+    - getPayload - find out what this does
+
+  - make api call in a useEffect and check for token in local storage
+
+- push to new page for podcasts
 - (get the keys to not show)
-- login button + test
-  - push to new page for podcasts
 
 2 - Podcast List
-
-to resolve - error 400 message: "Only valid bearer authentication supported" linked to the code in PodcastIndex line 14
 
 add in route for podcasts - done
 fetch user shows - getting error
