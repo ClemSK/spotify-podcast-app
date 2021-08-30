@@ -1,5 +1,4 @@
-import axios from 'axios'
-import { bearerToken } from './SpotifyAuth'
+// import axios from 'axios'
 // import { getToken } from './auth'
 
 // should we use this?
@@ -9,18 +8,14 @@ import { bearerToken } from './SpotifyAuth'
 // Get a list of the current user’s saved shows:
 // GET 'https://api.spotify.com/v1/me/shows'
 
-const showsUrl = 'https://api.spotify.com/v1/me/shows'
 
-export const getAllUserShows = () => {
-  // accessing the users data with token
-  const requestUserData = {
-    headers: { Authorization: `Bearer ${bearerToken()}` },
-  }
-  // getting the show url
-  return axios.get(`${showsUrl}`, requestUserData)
-}
 
-console.log(getAllUserShows)
+// export const bearerToken = () => {
+//   return window.localStorage.getItem()
+// }
+// console.log('this is the bearer token', bearerToken())
+
+// console.log(getAllUserShows())
 
 // Secondary
 // List episodes for a show:

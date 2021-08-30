@@ -24,13 +24,15 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
   const stringAfterHashtag = hash.substring(1)
   const paramsInUrl = stringAfterHashtag.split('&')
   const paramsSplitUp = paramsInUrl.reduce((accumulater, currentValue) => {
-    console.log(currentValue)
+    // console.log(currentValue)
     const [key, value] = currentValue.split('=')
     accumulater[key] = value
     return accumulater
   }, {})
 
+  console.log(paramsSplitUp.access_token)
   return paramsSplitUp
+  
 }
 
 const SpotifyAuth = () => {
@@ -39,7 +41,7 @@ const SpotifyAuth = () => {
       const { access_token, expires_in, token_type } =
         getReturnedParamsFromSpotifyAuth(window.location.hash)
 
-      // localStorage.clear()
+      localStorage.clear()
 
       localStorage.setItem('accessToken', access_token)
       localStorage.setItem('tokenType', token_type)
@@ -47,10 +49,13 @@ const SpotifyAuth = () => {
     }
   })
 
+
+
   const handleLogin = () => {
     window.location = `${spotifyAuthEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopesUrlParam}&response_type=token&show_dialog=true`
   }
-
+  
+  
   return (
     <div className="container">
       <h1>hi</h1>
@@ -59,39 +64,10 @@ const SpotifyAuth = () => {
   )
 }
 
+
 export default SpotifyAuth
 
-// Final url sent to Spotify API for login in required format from documentation
-export const loginUrl = `${spotifyAuthEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopes.join(
-  '%20'
-)}&response_type=token&show_dialog=true`
 
-// As the Spotify access token is different to the localstorage token and is required for functionality, pulling the ?
-export const getAccessToken = () => {
-  return window.location.hash
-    .substring(1)
-    .split('&')
-    .reduce((initial, item) => {
-      let parts = item.split('=')
-      initial[parts[0]] = decodeURIComponent(parts[1])
-      console.log(initial)
-      return initial
-    }, {})
-}
 
-console.log('we are logging the getAccessToken function', getAccessToken()) // this returns the output of the function
 
-// console.log('this is getAcessToken from Auth.js page: ', getAccessToken) - this only returns the text of the function
 
-export const setToken = (token) => {
-  window.localStorage.setItem('setting the token', token)
-}
-
-export const getToken = () => {
-  return window.localStorage.getItem('getting the token')
-}
-
-export const bearerToken = () => {
-  return getAccessToken().access_token
-}
-console.log('this is the bearer token', bearerToken())
