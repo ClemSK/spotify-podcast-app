@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-// const podcastEndpoint = 'https://api.spotify.com/v1/me/shows'
-const podcastEndpoint =
-  'https://api.spotify.com/v1/shows/6RbJUsaOaboqSBqQUfdQtR/episodes'
+import PodcastCard from './PodcastCard'
+
+const podcastEndpoint = 'https://api.spotify.com/v1/me/shows'
+// const podcastEndpoint =
+//   'https://api.spotify.com/v1/shows/6RbJUsaOaboqSBqQUfdQtR/episodes'
 
 const GetPodcast = () => {
   const [token, setToken] = useState('')
@@ -35,14 +37,7 @@ const GetPodcast = () => {
       <button onClick={handleGetPodcasts}>Get Podcasts</button>
       {data?.items
         ? data.items.map((item) => (
-            <p>
-              {item.name}
-              {/* {item.show.name}
-              {', '}
-              {item.show.total_episodes}
-              {', '}
-              {item.show.publisher} */}
-            </p>
+            <PodcastCard key={item.show.name} {...item} />
           ))
         : null}
     </>
