@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const podcastEndpoint = "https://api.spotify.com/v1/me/shows";
+const podcastEndpoint = "	https://api.spotify.com/v1/me/episodes";
 
 const GetPodcast = () => {
   const [token, setToken] = useState("");

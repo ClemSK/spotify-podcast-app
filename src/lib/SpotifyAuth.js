@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { callSpotifyApi } from './Api'
 
 // Variables used to serve up the loginUrl to the Spotify API
 
@@ -11,11 +12,19 @@ const scopes = [
   'user-read-playback-state',
   'user-read-recently-played',
   'user-read-currently-playing',
+  'user-read-playback-position',
   'user-top-read',
   'user-modify-playback-state',
+  'playlist-modify-private',
+  'user-read-private',
   'user-follow-modify',
   'user-follow-read',
   'user-library-modify',
+  `user-library-read`,
+  'user-library-modify',
+  'app-remote-control',
+  'streaming',
+  'ugc-image-upload',
 ]
 
 const scopesUrlParam = scopes.join(spaceDelimiter)
@@ -46,6 +55,8 @@ const SpotifyAuth = () => {
       localStorage.setItem('accessToken', access_token)
       localStorage.setItem('tokenType', token_type)
       localStorage.setItem('expiresIn', expires_in)
+
+
     }
   })
 
