@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { callSpotifyApi } from './Api'
 
 // Variables used to serve up the loginUrl to the Spotify API
 
@@ -9,22 +8,8 @@ const clientID = 'e74be6c70b214c6a89ffc0bb76ddd005' // our client ID
 const spaceDelimiter = '%20'
 const scopes = [
   // The functinoality we request from the Spotify API for the app. We can add further functionality by adding scopes from the spotify documentation
-  'user-read-playback-state',
-  'user-read-recently-played',
-  'user-read-currently-playing',
-  'user-read-playback-position',
-  'user-top-read',
-  'user-modify-playback-state',
-  'playlist-modify-private',
-  'user-read-private',
-  'user-follow-modify',
-  'user-follow-read',
-  'user-library-modify',
   `user-library-read`,
-  'user-library-modify',
-  'app-remote-control',
-  'streaming',
-  'ugc-image-upload',
+  `user-library-modify`,
 ]
 
 const scopesUrlParam = scopes.join(spaceDelimiter)
@@ -41,7 +26,6 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
 
   console.log(paramsSplitUp.access_token)
   return paramsSplitUp
-  
 }
 
 const SpotifyAuth = () => {
@@ -55,18 +39,13 @@ const SpotifyAuth = () => {
       localStorage.setItem('accessToken', access_token)
       localStorage.setItem('tokenType', token_type)
       localStorage.setItem('expiresIn', expires_in)
-
-
     }
   })
-
-
 
   const handleLogin = () => {
     window.location = `${spotifyAuthEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopesUrlParam}&response_type=token&show_dialog=true`
   }
-  
-  
+
   return (
     <div className="container">
       <h1>hi</h1>
@@ -75,10 +54,4 @@ const SpotifyAuth = () => {
   )
 }
 
-
 export default SpotifyAuth
-
-
-
-
-
