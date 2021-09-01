@@ -15,7 +15,11 @@ const NavBar = () => {
           <Link to="/podcast" className="navbar-item podcasts">
             Podcasts
           </Link>
+<<<<<<< HEAD
+          <Link to="/episodes" className="navbar-item">
+=======
           <Link to="/podcast" className="navbar-item episodes">
+>>>>>>> 63cbc09a176b97692fb0226b8174735a47eda3de
             Episodes
           </Link>
           <div className="search-bar-container navbar-item">
