@@ -4,8 +4,9 @@ import axios from 'axios'
 import PodcastCard from './PodcastCard'
 
 const podcastEndpoint = 'https://api.spotify.com/v1/me/shows'
-// const podcastEndpoint =
-//   'https://api.spotify.com/v1/shows/6RbJUsaOaboqSBqQUfdQtR/episodes'
+
+// const episodesEndpoint =
+//   'https://api.spotify.com/v1/shows/7qZAVw03FuurfYnWIWwkHY/episodes'
 
 const GetPodcast = () => {
   const [token, setToken] = useState('')
