@@ -13,7 +13,7 @@ const NavBar = () => {
           <Link to="/podcast" className="navbar-item podcasts">
             Podcasts
           </Link>
-          <Link to="/podcast" className="navbar-item episodes">
+          <Link to="/episodes" className="navbar-item has-background-success">
             Episodes
           </Link>
           <div className="search-bar-container navbar-item">
