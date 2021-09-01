@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import '../styles/App.css'
 
 // Variables used to serve up the loginUrl to the Spotify API
 
@@ -48,8 +49,7 @@ const SpotifyAuth = () => {
 
   return (
     <div className="container">
-      <h1>hi</h1>
-      <button onClick={handleLogin}>login to spotify</button>
+      <button className="spotifyAuth__button" onClick={handleLogin}><span className="shape"></span>LOGIN TO SPOTIFY</button>
     </div>
   )
 }

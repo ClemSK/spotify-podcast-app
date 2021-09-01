@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../styles/PodcastCard.css'
 
 const PodcastCard = (props) => {
   const name = props.show.name
