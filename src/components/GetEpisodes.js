@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import EpisodesCard from './EpisodeCard'
 
-// The thing to work out here is how to pass the podcast IDs to the episodes endpoint
-// so that is can fetch the episodes for each show
-// I've exposed the ID in the PodcastCard to show it in the url when clicking on a podcast
+const podcastEndpoint =
+  'https://api.spotify.com/v1/shows/4Jgtgr4mHXNDyLldHkfEMz/episodes'
 
-// import PodcastCard from './PodcastCard'
-
-const episodesEndpoint = 'https://api.spotify.com/v1/shows/{id}/episodes'
-
-const GetPodcast = () => {
+const GetEpisodes = () => {
   const [token, setToken] = useState('')
   const [data, setData] = useState({})
 
@@ -21,7 +17,7 @@ const GetPodcast = () => {
 
   const handleGetEpisodes = () => {
     axios
-      .get(episodesEndpoint, {
+      .get(podcastEndpoint, {
         headers: {
           Authorization: 'Bearer ' + token,
         },
@@ -30,19 +26,18 @@ const GetPodcast = () => {
         setData(response.data)
       })
       .catch((err) => {
-        console.error('there was an error fetching podcast episodes', err)
+        console.error('there was an error fetching episodes', err)
       })
   }
 
   return (
-    // could put episodes here rather than in a separate page
     <>
       <button onClick={handleGetEpisodes}>Get Episodes</button>
       {data?.items
-        ? data.items.map((item) => <p key={item.show.name} {...item}></p>)
+        ? data.items.map((item) => <EpisodesCard key={item.name} {...item} />)
         : null}
     </>
   )
 }
 
-export default GetPodcast
+export default GetEpisodes
