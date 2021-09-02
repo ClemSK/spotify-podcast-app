@@ -32,6 +32,10 @@ const NavBar = () => {
             {/* insert ternary to change logout to login depending on local token */}
             Logout
           </Link>
+          <Link to="/episodes" className="navbar-item login-logout">
+            {/* insert ternary to change logout to login depending on local token */}
+            Logout
+          </Link>
         </div>
       </div>
     </nav>

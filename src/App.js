@@ -5,7 +5,10 @@ import Home from './common/Home'
 import Login from './auth/Login'
 import PodcastIndex from './components/PodcastIndex'
 import GetEpisodes from './components/GetEpisodes'
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7241f7c72df1b375acd4c6856bb4b2b11d5d257f
 function App() {
   return (
     <BrowserRouter>
