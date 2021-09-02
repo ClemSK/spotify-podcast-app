@@ -18,6 +18,10 @@ const GetPodcast = () => {
     }
   }, [])
 
+  useEffect(() => {
+    handleGetPodcasts()
+  }, [token])
+
   const handleGetPodcasts = () => {
     axios
       .get(podcastEndpoint, {
@@ -34,14 +38,14 @@ const GetPodcast = () => {
   }
 
   return (
-    <>
-      <button onClick={handleGetPodcasts}>Get Podcasts</button>
+    <div className="podcasts is-flex">
+      {/* <button onClick={handleGetPodcasts}>Get Podcasts</button> */}
       {data?.items
         ? data.items.map((item) => (
             <PodcastCard key={item.show.name} {...item} />
           ))
         : null}
-    </>
+    </div>
   )
 }
 

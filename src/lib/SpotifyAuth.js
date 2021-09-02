@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
+import { useHistory } from 'react-router-dom'
 import '../styles/App.css'
 
 // Variables used to serve up the loginUrl to the Spotify API
@@ -30,6 +31,8 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
 }
 
 const SpotifyAuth = () => {
+  const history = useHistory()
+
   useEffect(() => {
     if (window.location.hash) {
       const { access_token, expires_in, token_type } =
@@ -40,12 +43,17 @@ const SpotifyAuth = () => {
       localStorage.setItem('accessToken', access_token)
       localStorage.setItem('tokenType', token_type)
       localStorage.setItem('expiresIn', expires_in)
+      history.push('/podcast')
+      if (history.location.pathname === '/podcast') {
+      }
     }
   })
 
   const handleLogin = () => {
     window.location = `${spotifyAuthEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopesUrlParam}&response_type=token&show_dialog=true`
   }
+
+
 
   return (
     <div className="container">
@@ -55,3 +63,4 @@ const SpotifyAuth = () => {
 }
 
 export default SpotifyAuth
+

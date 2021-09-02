@@ -86,3 +86,13 @@
 .spotifyAuth__button:hover .shape::after {
   transform: translateY(0%);
 }
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.podcasts {
+  display: flex;
+  flex-wrap: wrap;
+}
