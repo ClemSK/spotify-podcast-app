@@ -63,11 +63,7 @@ const GetEpisodes = () => {
       <Link to={`/podcast/${id}/episodes`}>get podcast episodes</Link>
       <button onClick={handleGetEpisodes}>Get Episodes</button>
       {data?.items
-<<<<<<< HEAD:src/components/GetEpisodes.js
-        ? data.items.map((item) => <EpisodesCard key={item.name} {...item} />)
-=======
         ? data.items.map((item) => <EpisodeCard key={item.name} {...item} />)
->>>>>>> 7241f7c72df1b375acd4c6856bb4b2b11d5d257f:src/components/Episodes.js
         : null}
     </>
   )

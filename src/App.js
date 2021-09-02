@@ -5,11 +5,12 @@ import Home from './common/Home'
 import Login from './auth/Login'
 import PodcastIndex from './components/PodcastIndex'
 import GetEpisodes from './components/GetEpisodes'
-<<<<<<< HEAD
-=======
+import SearchResults from './lib/SearchResults'
+import Logout from './auth/Logout'
 
->>>>>>> 7241f7c72df1b375acd4c6856bb4b2b11d5d257f
 function App() {
+  
+
   return (
     <BrowserRouter>
       <NavBar />
@@ -19,6 +20,8 @@ function App() {
         <Route path="/podcast" component={PodcastIndex} />
         <Route path="/podcast/:id/episodes" component={GetEpisodes} />
         {/* <Route path="/episodes" component={GetEpisodes} /> */}
+        <Route path="/results" component={SearchResults} />
+        <Route path="/logout" component={Logout} />
       </Switch>
     </BrowserRouter>
   )
