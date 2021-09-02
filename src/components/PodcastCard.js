@@ -10,7 +10,7 @@ const PodcastCard = (props) => {
   const id = props.show.id
   // destructuring
   // add an object here
-  console.log('this is props in podcast card', props) // to display what's inside the the object
+  // console.log('this is props in podcast card', props) // to display what's inside the the object
 
   return (
     // add in an object in the link
