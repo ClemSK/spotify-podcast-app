@@ -18,7 +18,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/podcast" component={PodcastIndex} />
-        <Route path="/episodes" component={GetEpisodes} />
+        <Route path="/podcast/:id/episodes" component={GetEpisodes} />
+        {/* <Route path="/episodes" component={GetEpisodes} /> */}
         <Route path="/results" component={SearchResults} />
         <Route path="/logout" component={Logout} />
       </Switch>
