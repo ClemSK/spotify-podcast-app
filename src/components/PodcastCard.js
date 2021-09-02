@@ -2,6 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/PodcastCard.css'
 
+// 1 way of doing it
+// const
+// Export default function functionName({ match}) {
+// Export default function functionName({ match}) {
+
 const PodcastCard = (props) => {
   const name = props.show.name
   const publisher = props.show.publisher
@@ -10,7 +15,7 @@ const PodcastCard = (props) => {
   const id = props.show.id
   // destructuring
   // add an object here
-  console.log('this is props in podcast card', props) // to display what's inside the the object
+  // console.log('this is props in podcast card', props) // to display what's inside the the object
 
   return (
     // add in an object in the link
@@ -23,13 +28,16 @@ const PodcastCard = (props) => {
 
           <div className="card-image">
             <figure className="image is-1by1">
+              {/* <Link to='episodes link'> */}
               <img
                 src={image}
                 alt={name}
                 loading="lazy"
                 width="200"
                 hieght="200"
-              />
+                // onClick={function}
+              ></img>
+              {/* </Link> */}
             </figure>
           </div>
 

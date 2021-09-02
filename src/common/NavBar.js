@@ -14,7 +14,7 @@ const NavBar = () => {
             Podcasts
           </Link>
           <Link
-            to="/podcast/:id" // modified to reflect the ID of the podcast and expose it onClick
+            to="/episodes" // modified to reflect the ID of the podcast and expose it onClick
             className="navbar-item has-background-success"
           >
             Episodes

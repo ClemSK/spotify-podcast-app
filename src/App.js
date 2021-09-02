@@ -15,6 +15,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/podcast" component={PodcastIndex} />
         <Route path="/podcast/:id/episodes" component={GetEpisodes} />
+        {/* <Route path="/episodes" component={GetEpisodes} /> */}
       </Switch>
     </BrowserRouter>
   )
