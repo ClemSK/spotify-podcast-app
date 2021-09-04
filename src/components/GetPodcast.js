@@ -38,23 +38,6 @@ const GetPodcast = () => {
       })
   }
 
-  // const getSinglePodcastEpisodes = (id) => {
-  //   return axios.get(`${podcastEndpoint}/podcast/${id}`)
-  // }
-  // console.log(getSinglePodcastEpisodes())
-
-  // const handleGetEpisodes = (props) => {
-  //   // get id from podcast endpoint and pass on to episode endpoint
-  //   const id = props.show.id
-  //   // return episodesEndpoint(id)
-  //   return GetEpisodes(episodesEndpoint(id))
-  // }
-
-  // state = {
-  //   data: podcastEndpoint,
-  // }
-  // getData = data
-
   return (
     <div className="podcasts is-flex">
       {/* <button onClick={handleGetPodcasts}>Get Podcasts</button> */}
@@ -63,8 +46,6 @@ const GetPodcast = () => {
             <PodcastCard key={item.show.name} {...item} />
           ))
         : null}
-
-      {/* <PodcastCard onClick={handleGetEpisodes} /> */}
     </div>
   )
 }

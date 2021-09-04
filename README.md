@@ -1,15 +1,15 @@
-Spotify API Podcast App with React
+# Spotify API Podcast App with React
 
-Original intent:
+## Original intent:
 
-Create a podcast feed which brings up the latest episodes to scroll through for the user. This feature does not currently exist in Spotify that we are aware of.
+Create a podcast feed which brings up the latest episodes to scroll through for the user. This feature does not currently exist in Spotify desktop at present.
 
-MVP:
+## MVP:
 
 - get user to log into Spotify
 - display shows
 
-Bonus:
+## Bonus:
 
 - search bar
 - display episodes
@@ -17,17 +17,72 @@ Bonus:
 
 Our initial vision was big and bold, to basically create an alternate podcast UI for Spotify with our own twist. The idea was to have a list of your podcasts and be able to play the latest episodes. This is doable, but in the end, outside the scope of this project. If we had more time we could have potentially added a player to stream the shows using the Spotify SDK.
 
-Where we ended up:
+# Running the app
+
+To run the app you will need to do the following
+
+- a spotify developers account https://developer.spotify.com/documentation/web-api/
+- a client id from the developers account
+- to add localhost:3000/ to the uri of your develoeprs account if running from your local machine or the address this would be hosted
+- if you want to add a player: https://developer.spotify.com/documentation/web-playback-sdk/
+
+## `yarn add`
+
+This will run and install the neccessary modules required for the app to run
+
+## `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+Further reading:
+
+- implicit grant authorisation flow: https://developer.spotify.com/documentation/general/guides/authorization-guide/#implicit-grant-flow
+- podcast endpoints: https://developer.spotify.com/community/news/2020/03/20/introducing-podcasts-api/
+
+https://user-images.githubusercontent.com/64632596/132091051-61c9c319-efdc-4f4a-9a6e-91bcb799b105.png
+
+## Where we ended up:
+
 We managed acheive our MVP and added some additional functionality such as a search bar.
 There is a colourful UI with functionality to log in, browse your shows and search the spotify catalogue. A desirable feature would be to link the episodes of a show and add the new shows from the search results to the existing list of shows.
 
-Highlights: Getting access to the API and pulling data back: the process of access Spotify's API is not easy and wrestling with the code and frequent reviews of the docs we managed to get a working solution to handle the API data. It's a good first attempt at working with the Spotify API and may be the starting point of other Spotify based projects.
+## Screenshots and Wireframes
 
-Struggles: Our first initial hurdle was sucessfully pulling data from the spotify api. The api a multitude of authorization flows which allow a user to authenticate. We chose the simplest that met our functional requirements for the project however, once authorized we had mixed responses from our desired api endpoint most of which were 400, 401, 403, mostly revolving around not being authenticated.
+We took screenshots to show the end stage of our app for the login, show, episodes and search pages.
+
+The wireframes represent the original intent (grey background) and the end stage of teh app (white background)
+
+## Login:
+
+![Alt text](https://user-images.githubusercontent.com/64632596/132090881-836463f4-99cf-448d-b182-3418cde9d090.gif 'Login Page')
+
+## Podcast page:
+
+![Alt text](https://user-images.githubusercontent.com/64632596/132090747-48032083-ebb0-4fd9-8d19-d89dc6b0c445.png 'Podcast page')
+
+## Episodes page:
+
+![Alt text](https://user-images.githubusercontent.com/64632596/132090561-d0361c66-2134-4107-bc2f-7640d3ca3372.png 'Episodes Page')
+
+## Search page:
+
+![Alt text](https://user-images.githubusercontent.com/64632596/132090824-6d1aa6d9-7eb6-4198-af31-3d232bae2be7.png 'Search Results Page')
+
+## Highlights:
+
+Getting access to the API and pulling data back: the process of access Spotify's API is not easy and wrestling with the code and frequent reviews of the docs we managed to get a working solution to handle the API data. It's a good first attempt at working with the Spotify API and may be the starting point of other Spotify based projects.
+
+## Struggles:
+
+Our first initial hurdle was sucessfully pulling data from the spotify api. The api a multitude of authorization flows which allow a user to authenticate. We chose the simplest that met our functional requirements for the project however, once authorized we had mixed responses from our desired api endpoint most of which were 400, 401, 403, mostly revolving around not being authenticated.
 
 This posed an interesting problem when debugging as we were recieving the access token back from the spotify api which we were using in all our api calls to various endpoints. What we discovered was this token was not being stored in local storage. This only took a few lines of code to solve once we understood this however, this only reduced the type of errors we recieved back when calling different api endpoints. Some endpoints would work while others would not. This was due to the way spotify api endpoints require the access token to be passed along with other requirements in the string. Once solved we could call any end point and recieve data back. This was quite a mountain to climb as without solving these problems we wouldn't be able to create our app and ended taking half the project time to solve.
 
-Following this there were two further problems once we were able to reach our MVP.
+## Following this there were two further problems once we were able to reach our MVP.
 
 1. Passing data from the podcasts page to the episodes page when a user clicked a podcast card.
 2. Search bar functionality
@@ -40,7 +95,7 @@ Instead we found a simple solution which was to instead have the required data a
 
 We were able to use the search bar once, call the function and push the user to results page however, if the user entered a new string into the search bar the functionality and access to the search function was lost as we were already on the rendered search results and the button lost functionality. To solve for this we had our useEffect function monitor any change in web address to recall our search function rather than the functionality on our NavBar.js which used a handleClick when the button was pressed to call the function directly.
 
-What we would like to add to the project:
+## What we would like to add to the project:
 
 - show notes
 - player to stream shows
@@ -48,30 +103,13 @@ What we would like to add to the project:
 - when a user finishes listening to an episode it is removed from the list
 - ability for the user to organise episodes and reorder them
 
-What we learnt:
+## What we learnt:
+
 Working with APIs is not always easy but we now have a better understanding of the process of accessing APIs and fetching data to then handle it. What was useful is that Spotify has extensive documentation which makes it helpful as a guide. However, we found that looking at other projects helped to solidify how to approach various tasks with practical examples, using the API 'in the wild'.
 
-Would we recommend trying this?
+## Would we recommend trying this?
+
 Yes, if you're ready to spend time understanding the API, you will be rewarded with the rich data available.
 
 C'mon it's Spotify dude, give it a go!
 ..Ta da dum da dum dum
-
-# Running the app
-
-To run the app you will need to do the following
-
--a spotify developers account
--a client id from the developers account
--to add localhost:3000/ to the uri your develoeprs account
-
-# `yarn add`
-
-This will run and install the neccessary modules required for the app to run
-## `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
