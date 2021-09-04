@@ -20,21 +20,21 @@ const episodesEndpoint =
 // }
 
 const GetEpisodes = () => {
-  const { id } = useParams()
-  const history = useHistory()
+  // const { id } = useParams()
+  // const history = useHistory()
   const [token, setToken] = useState('')
   const [data, setData] = useState({})
   const [state, setState] = React.useState({ podcast: null })
 
-  getEpisodesfromApi = async () => {
-    try {
-      const res = await getSingleShowEpisodes(id)
-      setState({ podcast: res.data })
-      history.push('podcast/:id/episodes')
-    } catch (err) {
-      console.error(`An error occured fetching cheese ${id}`, err)
-    }
-  }
+  // getEpisodesfromApi = async () => {
+  //   try {
+  //     const res = await getSingleShowEpisodes(id)
+  //     setState({ podcast: res.data })
+  //     history.push('podcast/:id/episodes')
+  //   } catch (err) {
+  //     console.error(`An error occured fetching cheese ${id}`, err)
+  //   }
+  // }
 
   console.log('state is', state)
 

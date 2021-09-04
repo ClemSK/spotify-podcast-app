@@ -65,7 +65,6 @@ const GetPodcast = () => {
         : null}
 
       {/* <PodcastCard onClick={handleGetEpisodes} /> */}
-    </>
     </div>
   )
 }
