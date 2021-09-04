@@ -1,41 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/NavBar.css'
 import { useHistory } from 'react-router-dom'
-import axios from 'axios'
-import SearchResults from '../lib/SearchResults'
+
 
 const NavBar = () => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [data, setData] = useState({})
-  const token = localStorage.getItem('accessToken')
   const history = useHistory()
 
-  useEffect(() => {
-    // call search results
-    SearchResults({data})
-  }, [data])
-
   const handleSearch = () => {
-    const string = searchTerm.split(' ').join('%20')
-    console.log(string)
-
-    axios
-      .get(
-        `https://api.spotify.com/v1/search?q=${searchTerm}&type=show&market=US&limit=10&offset=5`,
-        {
-          headers: {
-            Authorization: 'Bearer ' + token,
-          },
-        }
-      )
-      .then((response) => {
-        setData(response.data)
-      })
-      .catch((err) => {
-        console.error('there was an error fetching podcasts', err)
-      })
-      history.push('/results')
+    history.push(`/results/${searchTerm}`)
   }
 
   return (
@@ -70,10 +44,10 @@ const NavBar = () => {
             </button>
             <div className="fa fa-times navbar-item"></div>
           </div>
-          <Link to="/logout" className="navbar-item login-logout">
+          <a href="http://github.io" className="navbar-item login-logout">
             {/* insert ternary to change logout to login depending on local token */}
-            Logout
-          </Link>
+            GitHub Files
+          </a>
         </div>
       </div>
     </nav>

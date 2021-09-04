@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import EpisodeCard from './EpisodeCard'
-import { useHistory, useParams } from 'react-router-dom'
+import GetPodcast from './GetPodcast'
+import '../styles/GetEpisodes.css'
 
 const podcastEndpoint =
   'https://api.spotify.com/v1/shows/4Jgtgr4mHXNDyLldHkfEMz/episodes'
@@ -59,13 +60,14 @@ const GetEpisodes = () => {
   }
 
   return (
-    <>
-      <Link to={`/podcast/${id}/episodes`}>get podcast episodes</Link>
+  <div className="episodes-container">
       <button onClick={handleGetEpisodes}>Get Episodes</button>
-      {data?.items
-        ? data.items.map((item) => <EpisodeCard key={item.name} {...item} />)
-        : null}
-    </>
+      <div className="episodes-list">
+        {data?.items
+          ? data.items.map((item) => <EpisodeCard key={item.name} {...item} />)
+          : null}
+      </div>
+    </div>
   )
 }
 
