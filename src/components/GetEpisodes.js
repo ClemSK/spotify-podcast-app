@@ -27,11 +27,15 @@ const GetEpisodes = () => {
   const [data, setData] = useState({})
   const [state, setState] = React.useState({ podcast: null })
 
+  useEffect(() => {
+    handleGetEpisodes()
+  }, [token])
+
   // getEpisodesfromApi = async () => {
   //   try {
   //     const res = await getSingleShowEpisodes(id)
   //     setState({ podcast: res.data })
-  //     history.push('podcast/:id/episodes')
+  //     // history.push('podcast/:id/episodes')
   //   } catch (err) {
   //     console.error(`An error occured fetching cheese ${id}`, err)
   //   }
@@ -62,7 +66,7 @@ const GetEpisodes = () => {
 
   return (
     <div className="episodes-container">
-      <button onClick={handleGetEpisodes}>Get Episodes</button>
+      {/* <button onClick={handleGetEpisodes}>Get Episodes</button> */}
       <div className="episodes-list">
         {data?.items
           ? data.items.map((item) => <EpisodeCard key={item.name} {...item} />)
@@ -73,3 +77,15 @@ const GetEpisodes = () => {
 }
 
 export default GetEpisodes
+
+// use this to get the ID out from the url and get the podcast episodes
+
+// import React from 'react'
+// import { useParams } from 'react-router-dom'
+
+// const GetEpisodes = () => {
+//   const { id } = useParams()
+//   return <p>{id}</p>
+// }
+
+// export default GetEpisodes
