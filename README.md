@@ -66,7 +66,7 @@ The wireframes represent the original intent (grey background) and the end stage
 
 ## Episodes page:
 
-![Alt text](https://user-images.githubusercontent.com/64632596/132090561-d0361c66-2134-4107-bc2f-7640d3ca3372.png 'Episodes Page')
+![Alt text](https://user-images.githubusercontent.com/64632596/132094747-edbec160-0fc4-467e-bd41-e656259d0910.png 'Episodes Page')
 
 ## Search page:
 
