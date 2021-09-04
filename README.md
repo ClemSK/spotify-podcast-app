@@ -89,6 +89,8 @@ This posed an interesting problem when debugging as we were recieving the access
 
 While we have data from 1 endpoint we were unable call the second endpoint and fetch episode data. One main issue is transferring the ID from the Show endpoint to the Episodes endpoint. So for now, it's work in progress, however we have some solutions that would solve for this forexample utilising useParams or useHistory to capture the episode ID and then on the episodes page push the ID into an api call and get all the relevent episodes for that podcast.
 
+This could be resolved by referencing the ID from the Podcast endpoint in the URL and passing it to the episodes endpoint.
+
 Search bar functionality was quite a challenge as we encountered an issue naitive to javascript that had multiple solutions all of which we tried but unfortunately due to the structuring of our project meant that data wouldn't be able to passed down our component tree without the use of Redux or useContext which presently have zero experience or knowledge of however, given enough time we would've solved for.
 
 Instead we found a simple solution which was to instead have the required data as a string which is passed into the browser address using useHistory which can then be pulled by a function on the componenet page we would've typically passed using props or an export function. This meant that the search bar functionality almost worked.
@@ -97,15 +99,22 @@ We were able to use the search bar once, call the function and push the user to 
 
 ## What we would like to add to the project:
 
+- making search and x icons function for search bar
+- logout button
 - show notes
+- hide/show episodes button
 - player to stream shows
-- podcast queue
+- show episodes that user has not yet listned to
 - when a user finishes listening to an episode it is removed from the list
+- podcast queue
 - ability for the user to organise episodes and reorder them
+- adding shows from the search list
 
 ## What we learnt:
 
 Working with APIs is not always easy but we now have a better understanding of the process of accessing APIs and fetching data to then handle it. What was useful is that Spotify has extensive documentation which makes it helpful as a guide. However, we found that looking at other projects helped to solidify how to approach various tasks with practical examples, using the API 'in the wild'.
+
+You can also easily get sucked into trying to reacreate your own version of Spotify. Know where you end and Spotify begins..
 
 ## Would we recommend trying this?
 
