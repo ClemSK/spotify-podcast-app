@@ -15,22 +15,19 @@ Bonus:
 - display episodes
 - podcast player
 
-Our initial vision was big and bold, to basically create an alternate podcast UI for Spotify with our own twist.
-The idea was to have a list of your podcasts and be able to play the latest episodes. This is doable, but in the end, outside the scope of this project. If we had more time we could have potentially added a player to stream the shows using the Spotify SDK.
+Our initial vision was big and bold, to basically create an alternate podcast UI for Spotify with our own twist. The idea was to have a list of your podcasts and be able to play the latest episodes. This is doable, but in the end, outside the scope of this project. If we had more time we could have potentially added a player to stream the shows using the Spotify SDK.
 
 Where we ended up:
 We managed acheive our MVP and added some additional functionality such as a search bar.
 There is a colourful UI with functionality to log in, browse your shows and search the spotify catalogue. A desirable feature would be to link the episodes of a show and add the new shows from the search results to the existing list of shows.
 
-Highlights:
-Getting access to the API and pulling data back: the process of access Spotify's API is not easy and wrestling with the code and frequent reviews of the docs we managed to get a working solution to handle the API data. It's a good first attempt at working with the Spotify API and may be the starting point of other Spotify based projects.
+Highlights: Getting access to the API and pulling data back: the process of access Spotify's API is not easy and wrestling with the code and frequent reviews of the docs we managed to get a working solution to handle the API data. It's a good first attempt at working with the Spotify API and may be the starting point of other Spotify based projects.
 
-Struggles:
-Our first initial hurdle was sucessfully pulling data from the spotify api. The api a multitude of authorization flows which allow a user to authenticate. We chose the simplest that met our functional requirements for the project however, once authorized we had mixed responses from our desired api endpoint most of which were 400, 401, 403, mostly revolving around not being authenticated.
+Struggles: Our first initial hurdle was sucessfully pulling data from the spotify api. The api a multitude of authorization flows which allow a user to authenticate. We chose the simplest that met our functional requirements for the project however, once authorized we had mixed responses from our desired api endpoint most of which were 400, 401, 403, mostly revolving around not being authenticated.
 
 This posed an interesting problem when debugging as we were recieving the access token back from the spotify api which we were using in all our api calls to various endpoints. What we discovered was this token was not being stored in local storage. This only took a few lines of code to solve once we understood this however, this only reduced the type of errors we recieved back when calling different api endpoints. Some endpoints would work while others would not. This was due to the way spotify api endpoints require the access token to be passed along with other requirements in the string. Once solved we could call any end point and recieve data back. This was quite a mountain to climb as without solving these problems we wouldn't be able to create our app and ended taking half the project time to solve.
 
-Following this there were two further problems once we were able to reach our MVP. 
+Following this there were two further problems once we were able to reach our MVP.
 
 1. Passing data from the podcasts page to the episodes page when a user clicked a podcast card.
 2. Search bar functionality
@@ -54,7 +51,7 @@ What we would like to add to the project:
 What we learnt:
 Working with APIs is not always easy but we now have a better understanding of the process of accessing APIs and fetching data to then handle it. What was useful is that Spotify has extensive documentation which makes it helpful as a guide. However, we found that looking at other projects helped to solidify how to approach various tasks with practical examples, using the API 'in the wild'.
 
-Would I recommend trying this?
+Would we recommend trying this?
 Yes, if you're ready to spend time understanding the API, you will be rewarded with the rich data available.
 
 C'mon it's Spotify dude, give it a go!
