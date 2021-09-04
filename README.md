@@ -56,3 +56,22 @@ Yes, if you're ready to spend time understanding the API, you will be rewarded w
 
 C'mon it's Spotify dude, give it a go!
 ..Ta da dum da dum dum
+
+# Running the app
+
+To run the app you will need to do the following
+
+-a spotify developers account
+-a client id from the developers account
+-to add localhost:3000/ to the uri your develoeprs account
+
+# `yarn add`
+
+This will run and install the neccessary modules required for the app to run
+## `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
