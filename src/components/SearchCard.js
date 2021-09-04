@@ -10,7 +10,9 @@ const description = results.description
     <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
       <div className="card">
         <div className="card-header">
-          <h4 className="card-header-title">{name}</h4>
+          <h4 className="card-header-title">{name.length >= 32
+              ? name.slice(0, 32) + ''
+              : name}</h4>
         </div>
 
         <div className="card-image">
@@ -27,7 +29,11 @@ const description = results.description
 
           <div className="card-content">
             <h5>{publisher}</h5>
-            <h5>{description}</h5>
+            <h5>
+            {description.length >= 50
+              ? description.slice(0, 50) + '...'
+              : description}
+          </h5>
           </div>
         
 
@@ -37,3 +43,5 @@ const description = results.description
 }
 
 export default SearchCard
+
+
