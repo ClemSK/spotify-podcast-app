@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+// import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import EpisodeCard from './EpisodeCard'
 import GetPodcast from './GetPodcast'
@@ -20,21 +21,21 @@ const episodesEndpoint =
 // }
 
 const GetEpisodes = () => {
-  const { id } = useParams()
-  const history = useHistory()
+  // const { id } = useParams()
+  // const history = useHistory()
   const [token, setToken] = useState('')
   const [data, setData] = useState({})
   const [state, setState] = React.useState({ podcast: null })
 
-  getEpisodesfromApi = async () => {
-    try {
-      const res = await getSingleShowEpisodes(id)
-      setState({ podcast: res.data })
-      history.push('podcast/:id/episodes')
-    } catch (err) {
-      console.error(`An error occured fetching cheese ${id}`, err)
-    }
-  }
+  // getEpisodesfromApi = async () => {
+  //   try {
+  //     const res = await getSingleShowEpisodes(id)
+  //     setState({ podcast: res.data })
+  //     history.push('podcast/:id/episodes')
+  //   } catch (err) {
+  //     console.error(`An error occured fetching cheese ${id}`, err)
+  //   }
+  // }
 
   console.log('state is', state)
 
@@ -60,7 +61,7 @@ const GetEpisodes = () => {
   }
 
   return (
-  <div className="episodes-container">
+    <div className="episodes-container">
       <button onClick={handleGetEpisodes}>Get Episodes</button>
       <div className="episodes-list">
         {data?.items

@@ -1,8 +1,7 @@
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/NavBar.css'
 import { useHistory } from 'react-router-dom'
-
 
 const NavBar = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -44,7 +43,10 @@ const NavBar = () => {
             </button>
             <div className="fa fa-times navbar-item"></div>
           </div>
-          <a href="http://github.io" className="navbar-item login-logout">
+          <a
+            href="https://github.com/ClemSK/spotify-podcast-app"
+            className="navbar-item login-logout"
+          >
             {/* insert ternary to change logout to login depending on local token */}
             GitHub Files
           </a>
