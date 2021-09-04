@@ -51,6 +51,13 @@ create PodcastCards to display user shows - created but have no data to return -
   use data, setData and state for info?
   add in objects for request? did this in PodcastCard component, may need checking with api dev console
 
+dynamic Route
+adds
+pull out a separate request
+useParams
+separate page where I'm calling endpoint with id
+do whats happening in cheeseboard for cheese-show / cheese edit
+
 3 - styling - 1/9/2021: James doing some styling for nav and login buttons
 
 - do login page
