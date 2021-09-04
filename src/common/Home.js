@@ -4,9 +4,9 @@ import '../styles/Home.css'
 
 const Home = () => {
   return (
-    <section className="hero is-fullheight-with-navbar">
+    <section className="hero is-fullheight-with-navbar landing">
       <div className="hero-body">
-        <div className="container">
+        <div className="container ">
           <Login />
         </div>
       </div>

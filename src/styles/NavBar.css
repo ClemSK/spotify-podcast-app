@@ -36,16 +36,16 @@
 }
 
 .search-bar {
-width: 100%;
-border: none;
-border-radius: 99px;
-color: white;
-background-color: purple;
-margin: 0 1rem 0 1rem;
-height: 2.5rem;
-outline: none;
-font-weight: 600;
-}
+  width: 100%;
+  border: none;
+  border-radius: 99px;
+  color: white;
+  background-color: purple;
+  margin: 0 1rem 0 1rem;
+  height: 2.5rem;
+  outline: none;
+  font-weight: 600;
+  }
 
 ::placeholder {
   color: white;

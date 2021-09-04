@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import '../styles/PodcastCard.css'
+import { useHistory } from 'react-router-dom'
 
 const PodcastCard = (props) => {
   const name = props.show.name
@@ -11,6 +13,7 @@ const PodcastCard = (props) => {
   // destructuring
   // add an object here
   // console.log('this is props in podcast card', props) // to display what's inside the the object
+
 
   return (
     // add in an object in the link

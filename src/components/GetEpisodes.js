@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import EpisodeCard from './EpisodeCard'
 import GetPodcast from './GetPodcast'
+import '../styles/GetEpisodes.css'
 
 const podcastEndpoint =
   'https://api.spotify.com/v1/shows/4Jgtgr4mHXNDyLldHkfEMz/episodes'
@@ -45,12 +46,14 @@ const GetEpisodes = () => {
   }
 
   return (
-    <>
+    <div className="episodes-container">
       <button onClick={handleGetEpisodes}>Get Episodes</button>
-      {data?.items
-        ? data.items.map((item) => <EpisodeCard key={item.name} {...item} />)
-        : null}
-    </>
+      <div className="episodes-list">
+        {data?.items
+          ? data.items.map((item) => <EpisodeCard key={item.name} {...item} />)
+          : null}
+      </div>
+    </div>
   )
 }
 

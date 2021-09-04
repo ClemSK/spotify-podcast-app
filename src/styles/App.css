@@ -96,3 +96,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.results-page {
+  background-color: purple;
+  display: flex;
+  flex-wrap: wrap;
+}
