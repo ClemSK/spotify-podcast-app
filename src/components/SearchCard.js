@@ -26,6 +26,7 @@ const description = results.description
               />
             </figure>
           </div>
+          
           <div className="card-content">
             <h5>{publisher}</h5>
             <h5>
