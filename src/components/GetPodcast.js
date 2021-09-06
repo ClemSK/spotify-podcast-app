@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import GetEpisodes, { episodesEndpoint } from './GetEpisodes'
+// import GetEpisodes, { episodesEndpoint } from './GetEpisodes'
 
 import PodcastCard from './PodcastCard'
 
