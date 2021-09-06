@@ -1,5 +1,18 @@
 .landing {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3 !important;
+}
+
+.front-element {
+  position: absolute !important;
+  z-index: 3 !important;
+  top: 200px !important;
+  left: 200px !important;
+}
+
+.back-element {
+  position: relative;
+  z-index: 1;
 }
