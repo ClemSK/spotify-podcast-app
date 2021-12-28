@@ -1,13 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 import '../styles/PodcastCard.css'
-import { useHistory } from 'react-router-dom'
-
-// 1 way of doing it
-// const
-// Export default function functionName({ match}) {
-// Export default function functionName({ match}) {
 
 const PodcastCard = (props) => {
   const name = props.show.name
