@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import EpisodeCard from './EpisodeCard'
 import Loading from '../common/Loading'
@@ -10,6 +10,7 @@ const GetEpisodes = () => {
   const token = localStorage.getItem('accessToken')
   const [data, setData] = useState({})
   const [state, setState] = React.useState({ episodes: null })
+  const history = useHistory()
 
   const handleGetEpisodes = () => {
     axios
@@ -27,7 +28,11 @@ const GetEpisodes = () => {
   }
 
   useEffect(() => {
-    handleGetEpisodes()
+    if (localStorage.getItem('accessToken')) {
+      handleGetEpisodes()
+    } else {
+      history.push('/')
+    }
   }, [token])
 
   // if (state.episodes === null) {
