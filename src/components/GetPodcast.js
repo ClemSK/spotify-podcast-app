@@ -8,7 +8,9 @@ const podcastEndpoint = 'https://api.spotify.com/v1/me/shows'
 const GetPodcast = () => {
   const [token, setToken] = useState('')
   const [data, setData] = useState({})
+  // const [showlist, setShowlist] = useState([])
   const history = useHistory()
+  let showIds = []
 
   useEffect(() => {
     if (localStorage.getItem('accessToken')) {
@@ -21,6 +23,21 @@ const GetPodcast = () => {
   useEffect(() => {
     handleGetPodcasts()
   }, [token])
+
+  useEffect(() => {
+    if (data) {
+      console.log(`This is the data form the API`, data.items)
+      let values = data.items
+      for (let val in values) {
+        console.log(values[val].show.id)
+        showIds.push(values[val].show.id)
+      }
+    }
+  }, [data])
+
+  useEffect(() => {
+    console.log(`SHOW IDs >>>>>>> `, showIds)
+  }, [showIds])
 
   const handleGetPodcasts = () => {
     axios
