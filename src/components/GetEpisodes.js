@@ -11,6 +11,7 @@ const GetEpisodes = () => {
   const [data, setData] = useState({})
   const [state, setState] = React.useState({ episodes: null })
   const history = useHistory()
+  let showIDs = null
 
   const handleGetEpisodes = () => {
     axios
@@ -26,6 +27,12 @@ const GetEpisodes = () => {
         console.error('there was an error fetching episodes', err)
       })
   }
+
+  // useEffect(() => {
+  //   if (!showIDs) {
+  //     history.push('/podcast')
+  //   }
+  // }, [])
 
   useEffect(() => {
     if (localStorage.getItem('accessToken')) {

@@ -8,7 +8,7 @@ const podcastEndpoint = 'https://api.spotify.com/v1/me/shows'
 const GetPodcast = () => {
   const [token, setToken] = useState('')
   const [data, setData] = useState({})
-  // const [showlist, setShowlist] = useState([])
+  const [showlist, setShowlist] = useState([])
   const history = useHistory()
   let showIds = []
 
@@ -26,10 +26,8 @@ const GetPodcast = () => {
 
   useEffect(() => {
     if (data) {
-      console.log(`This is the data form the API`, data.items)
       let values = data.items
       for (let val in values) {
-        console.log(values[val].show.id)
         showIds.push(values[val].show.id)
       }
     }
@@ -56,7 +54,6 @@ const GetPodcast = () => {
 
   return (
     <div className="podcasts is-flex">
-      {/* <button onClick={handleGetPodcasts}>Get Podcasts</button> */}
       {data?.items
         ? data.items.map((item) => (
             <PodcastCard key={item.show.name} {...item} />

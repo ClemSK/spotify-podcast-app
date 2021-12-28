@@ -44,7 +44,7 @@ const NavBar = () => {
             <div className="fa fa-times navbar-item"></div>
           </div>
           <a
-            href="https://github.com/ClemSK/spotify-podcast-app"
+            href="https://github.com/thejamesgore/ga-projects/tree/main/GA-Project-2"
             className="navbar-item login-logout"
           >
             {/* insert ternary to change logout to login depending on local token */}
