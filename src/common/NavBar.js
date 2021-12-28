@@ -8,7 +8,11 @@ const NavBar = () => {
   const history = useHistory()
 
   const handleSearch = () => {
-    history.push(`/results/${searchTerm}`)
+    if (localStorage.getItem('accessToken')) {
+      history.push(`/results/${searchTerm}`)
+    } else {
+      history.push('/')
+    }
   }
 
   return (
