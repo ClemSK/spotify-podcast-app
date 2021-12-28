@@ -5,7 +5,7 @@ import '../styles/App.css'
 // Variables used to serve up the loginUrl to the Spotify API
 
 const spotifyAuthEndpoint = 'https://accounts.spotify.com/authorize' // Auth endpoint
-const redirectUri = 'http://localhost:3000/' // redirect url after user is logged in
+const redirectUri = 'https://thejamesgore-project2.herokuapp.com/' // redirect url after user is logged in
 const clientID = '6949ff5463d648b5adc4aaf83e84c1d5' // our client ID
 const spaceDelimiter = '%20'
 const scopes = [
