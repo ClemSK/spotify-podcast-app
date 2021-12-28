@@ -14,7 +14,6 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
-        {/* <Route path="/podcast/:id" component={GetEpisodes} /> Use this to get the podcast ID */}
         <Route path="/podcast/:id" component={GetEpisodes} />
         <Route path="/podcast" component={PodcastIndex} />
         <Route path="/results" component={SearchPage} />

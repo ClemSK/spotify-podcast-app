@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import '../styles/App.css'
 
@@ -6,7 +6,7 @@ import '../styles/App.css'
 
 const spotifyAuthEndpoint = 'https://accounts.spotify.com/authorize' // Auth endpoint
 const redirectUri = 'http://localhost:3000/' // redirect url after user is logged in
-const clientID = 'e74be6c70b214c6a89ffc0bb76ddd005' // our client ID
+const clientID = '6949ff5463d648b5adc4aaf83e84c1d5' // our client ID
 const spaceDelimiter = '%20'
 const scopes = [
   // The functinoality we request from the Spotify API for the app. We can add further functionality by adding scopes from the spotify documentation
@@ -53,14 +53,13 @@ const SpotifyAuth = () => {
     window.location = `${spotifyAuthEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopesUrlParam}&response_type=token&show_dialog=true`
   }
 
-
-
   return (
     <div className="container">
-      <button className="spotifyAuth__button" onClick={handleLogin}><span className="shape"></span>LOGIN TO SPOTIFY</button>
+      <button className="spotifyAuth__button" onClick={handleLogin}>
+        <span className="shape"></span>LOGIN TO SPOTIFY
+      </button>
     </div>
   )
 }
 
 export default SpotifyAuth
-
