@@ -2,17 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 3 !important;
 }
 
 .front-element {
-  position: absolute !important;
   z-index: 3 !important;
-  top: 200px !important;
-  left: 200px !important;
 }
 
-.back-element {
-  position: relative;
-  z-index: 1;
+.hero {
+  background-color: #c0c2c8;
+  background-image: url('https://user-images.githubusercontent.com/83005220/147541218-4201e5c2-2122-4d0c-a3c6-b82a0c453645.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
