@@ -9,8 +9,8 @@ const GetEpisodes = () => {
   const { id } = useParams()
   const token = localStorage.getItem('accessToken')
   const [data, setData] = useState({})
-  const history = useHistory()
   const [state, setState] = React.useState({ episodes: null })
+  const history = useHistory()
 
   const handleGetEpisodes = () => {
     axios
